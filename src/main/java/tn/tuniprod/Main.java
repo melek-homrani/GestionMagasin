@@ -38,10 +38,10 @@ public class Main {
         tomate.setDateExpiration(LocalDate.of(2024, 12, 31));
 
         System.out.println("****All products with toString() go here****");
-        System.out.println(tuniProd.toString());
-        System.out.println(lait.toString());
-        System.out.println(yaourt.toString());
-        System.out.println(tomate.toString());
+//        System.out.println(tuniProd.toString());
+//        System.out.println(lait.toString());
+//        System.out.println(yaourt.toString());
+//        System.out.println(tomate.toString());
 
         System.out.println("****All products with expiration date go here****");
         tuniProd.afficher();

@@ -69,6 +69,14 @@ public class Magasin {
         }
     }
 
+    public boolean produitExists(Produit produit) {
+        for (int i = 0; i < nbProduits; i++) {
+            if (produit.comparer(produits[i]))
+                return true;
+        }
+        return false;
+    }
+
     public boolean addProduit(Produit produit) {
         if (nbProduits < CAPACITE_MAX && !this.produitExists(produit)) {
             produits[nbProduits] = produit;
@@ -78,12 +86,21 @@ public class Magasin {
         return false;
     }
 
-    public boolean produitExists(Produit produit) {
-        for (int i = 0; i < nbProduits; i++) {
-            if (produit.comparer(produits[i]))
-                return true;
+    public boolean removeProduit(Produit produit) {
+        if (nbProduits > 0 && this.produitExists(produit)) {
+            for (int i = 0; i < nbProduits; i++) {
+                if (produit.comparer(produits[i])) {
+                    produits[i] = produits[nbProduits - 1];
+                    setNbProduits(this.nbProduits - 1);
+                    return true;
+                }
+            }
         }
         return false;
+    }
+    
+    public static Magasin supMagasin(Magasin m1, Magasin m2) {
+        return m1.getNbProduits() > m2.getNbProduits() ? m1 : m2;
     }
 
     public String afficher() {
