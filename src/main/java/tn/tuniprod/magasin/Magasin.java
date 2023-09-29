@@ -16,13 +16,6 @@ public class Magasin {
         this.id = id;
         this.adresse = adresse;
         produits = new Produit[CAPACITE_MAX];
-
-    }
-
-    public Magasin(long id, String adresse, Produit[] produits) {
-        this.id = id;
-        this.adresse = adresse;
-        setProduits(produits);
     }
 
     public long getId() {
@@ -61,13 +54,14 @@ public class Magasin {
         this.nbProduits = nbProduits;
     }
 
-    public void setProduits(Produit[] produits) {
-        if (produits.length < CAPACITE_MAX) {
-            for (int i = 0; i < produits.length; i++) {
-                this.produits[i] = produits[i];
-            }
-        }
-    }
+//    public void setProduits(Produit[] produits) {
+//        if (produits.length < CAPACITE_MAX) {
+//            for (int i = 0; i < produits.length; i++) {
+//                this.produits[i] = produits[i];
+//                Produit.incNbTotalProcuit();
+//            }
+//        }
+//    }
 
     public boolean produitExists(Produit produit) {
         for (int i = 0; i < nbProduits; i++) {
@@ -81,6 +75,7 @@ public class Magasin {
         if (nbProduits < CAPACITE_MAX && !this.produitExists(produit)) {
             produits[nbProduits] = produit;
             setNbProduits(this.nbProduits + 1);
+            Produit.incNbTotalProcuit();
             return true;
         }
         return false;
@@ -92,13 +87,14 @@ public class Magasin {
                 if (produit.comparer(produits[i])) {
                     produits[i] = produits[nbProduits - 1];
                     setNbProduits(this.nbProduits - 1);
+                    Produit.decNbTotalProduit();
                     return true;
                 }
             }
         }
         return false;
     }
-    
+
     public static Magasin supMagasin(Magasin m1, Magasin m2) {
         return m1.getNbProduits() > m2.getNbProduits() ? m1 : m2;
     }

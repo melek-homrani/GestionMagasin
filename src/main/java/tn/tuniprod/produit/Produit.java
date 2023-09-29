@@ -19,7 +19,6 @@ public class Produit {
         this.id = id;
         this.libelle = libelle;
         this.marque = marque;
-        nbTotalProduits++;
     }
 
 
@@ -28,7 +27,6 @@ public class Produit {
         this.libelle = libelle;
         this.marque = marque;
         setPrix(prix);
-        nbTotalProduits++;
     }
 
     public Produit(int id, String libelle, String marque, double prix, LocalDate dateExpiration) {
@@ -37,7 +35,6 @@ public class Produit {
         this.marque = marque;
         setPrix(prix);
         this.dateExpiration = dateExpiration;
-        nbTotalProduits++;
     }
 
     public int getId() {
@@ -87,12 +84,20 @@ public class Produit {
         return Produit.nbTotalProduits;
     }
 
+    public static void incNbTotalProcuit(){
+        Produit.nbTotalProduits++;
+    }
+
+    public static void decNbTotalProduit() {
+        Produit.nbTotalProduits--;
+    }
+
     public boolean comparer(Produit p) {
         return (this.id == p.getId() && this.libelle.equals(p.getLibelle()) && this.prix == p.getPrix());
     }
 
     public static boolean comparer(Produit p1, Produit p2) {
-        return (p1.getId() == p2.getId() && p1.libelle.equals(p2.getLibelle()) && p1.prix == p2.getPrix());
+        return (p1.getId() == p2.getId() && p1.getLibelle().equals(p2.getLibelle()) && p1.getPrix() == p2.getPrix());
     }
 
 
