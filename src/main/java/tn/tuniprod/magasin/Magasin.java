@@ -8,6 +8,7 @@ public class Magasin {
     private final int CAPACITE_MAX = 50;
     private Produit[] produits;
     private int nbProduits = 0;
+    private static long nbTotalProduits = 0;
 
     public Magasin() {
     }
@@ -75,7 +76,7 @@ public class Magasin {
         if (nbProduits < CAPACITE_MAX && !this.produitExists(produit)) {
             produits[nbProduits] = produit;
             setNbProduits(this.nbProduits + 1);
-            Produit.incNbTotalProcuit();
+            Magasin.nbTotalProduits++;
             return true;
         }
         return false;
@@ -87,7 +88,7 @@ public class Magasin {
                 if (produit.comparer(produits[i])) {
                     produits[i] = produits[nbProduits - 1];
                     setNbProduits(this.nbProduits - 1);
-                    Produit.decNbTotalProduit();
+                    Magasin.nbTotalProduits++;
                     return true;
                 }
             }

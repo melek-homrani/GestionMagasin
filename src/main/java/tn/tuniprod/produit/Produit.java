@@ -10,7 +10,7 @@ public class Produit {
     private String marque;
     private double prix;
     private LocalDate dateExpiration;
-    private static long nbTotalProduits = 0;
+
 
     public Produit() {
     }
@@ -78,18 +78,6 @@ public class Produit {
 
     public void setDateExpiration(LocalDate dateExpiration) {
         this.dateExpiration = dateExpiration;
-    }
-
-    public static long getNbTotalProduits() {
-        return Produit.nbTotalProduits;
-    }
-
-    public static void incNbTotalProcuit(){
-        Produit.nbTotalProduits++;
-    }
-
-    public static void decNbTotalProduit() {
-        Produit.nbTotalProduits--;
     }
 
     public boolean comparer(Produit p) {
