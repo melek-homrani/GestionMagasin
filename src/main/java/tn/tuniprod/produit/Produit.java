@@ -10,7 +10,7 @@ public class Produit {
     private String marque;
     private double prix;
     private LocalDate dateExpiration;
-    private static long nbProduits = 0;
+    private static long nbTotalProduits = 0;
 
     public Produit() {
     }
@@ -19,7 +19,7 @@ public class Produit {
         this.id = id;
         this.libelle = libelle;
         this.marque = marque;
-        nbProduits++;
+        nbTotalProduits++;
     }
 
 
@@ -28,7 +28,7 @@ public class Produit {
         this.libelle = libelle;
         this.marque = marque;
         setPrix(prix);
-        nbProduits++;
+        nbTotalProduits++;
     }
 
     public Produit(int id, String libelle, String marque, double prix, LocalDate dateExpiration) {
@@ -37,7 +37,7 @@ public class Produit {
         this.marque = marque;
         setPrix(prix);
         this.dateExpiration = dateExpiration;
-        nbProduits++;
+        nbTotalProduits++;
     }
 
     public int getId() {
@@ -83,10 +83,9 @@ public class Produit {
         this.dateExpiration = dateExpiration;
     }
 
-    public static long getNbProduits(){
-        return Produit.nbProduits;
+    public static long getNbTotalProduits() {
+        return Produit.nbTotalProduits;
     }
-
 
     public boolean comparer(Produit p) {
         return (this.id == p.id);

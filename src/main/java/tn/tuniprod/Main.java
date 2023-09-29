@@ -50,7 +50,7 @@ public class Main {
         tomate.afficher();
 
         System.out.println("****Number Of All Products goes here****");
-        System.out.println("le nombre total de tous les produits dans tous les magasins " + Produit.getNbProduits());
+        System.out.println("le nombre total de tous les produits dans tous les magasins " + Produit.getNbTotalProduits());
 
         Magasin magasin = new Magasin(12, "Tunis");
         var added = magasin.addProduit(tuniProd);
@@ -69,6 +69,6 @@ public class Main {
         System.out.println("****All Products in Shop go here");
         System.out.println(magasin1.afficher());
 
-        System.out.println("le nombre total de tous les produits dans tous les magasins " + Produit.getNbProduits());
+        System.out.println("le nombre total de tous les produits dans tous les magasins " + Produit.getNbTotalProduits());
     }
 }
