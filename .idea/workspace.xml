@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abb6e94c-2514-46c1-bde1-bd445b960223" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/tn/tuniprod/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/tuniprod/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tn/tuniprod/produit/Produit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/tuniprod/produit/Produit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +57,7 @@
       <option name="presentableId" value="Default" />
       <updated>1695638531719</updated>
       <workItem from="1695638532717" duration="2323000" />
-      <workItem from="1695975605228" duration="1017000" />
+      <workItem from="1695975605228" duration="1412000" />
     </task>
     <servers />
   </component>

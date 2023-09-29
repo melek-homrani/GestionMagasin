@@ -88,11 +88,11 @@ public class Produit {
     }
 
     public boolean comparer(Produit p) {
-        return (this.id == p.id);
+        return (this.id == p.getId() && this.libelle.equals(p.getLibelle()) && this.prix == p.getPrix());
     }
 
     public static boolean comparer(Produit p1, Produit p2) {
-        return (p1.id == p2.id);
+        return (p1.getId() == p2.getId() && p1.libelle.equals(p2.getLibelle()) && p1.prix == p2.getPrix());
     }
 
 
