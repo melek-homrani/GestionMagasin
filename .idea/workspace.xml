@@ -6,11 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="abb6e94c-2514-46c1-bde1-bd445b960223" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/tuniprod/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/tuniprod/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Caissier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Caissier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Employe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Responsable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Responsable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Vendeur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Vendeur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/tuniprod/magasin/Magasin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/tuniprod/magasin/Magasin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -24,7 +37,9 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2VsxKlsLTj50zLdVk1ln1FBd5CL" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -59,6 +74,7 @@
       <workItem from="1695638532717" duration="2323000" />
       <workItem from="1695975605228" duration="3043000" />
       <workItem from="1695978940675" duration="1445000" />
+      <workItem from="1696062720995" duration="4715000" />
     </task>
     <servers />
   </component>

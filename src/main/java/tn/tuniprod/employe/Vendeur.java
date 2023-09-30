@@ -34,6 +34,12 @@ public class Vendeur extends Employe {
         return numeroDeCaisse;
     }
 
+    @Override
+    public double getSalaire() {
+        int SALAIRE_FIXE = 450;
+        return SALAIRE_FIXE * getTauxDeVente();
+    }
+
     public void setTauxDeVente(double tauxDeVente) {
         this.tauxDeVente = tauxDeVente;
     }
@@ -44,6 +50,6 @@ public class Vendeur extends Employe {
 
     @Override
     public String toString() {
-        return "Vendeur{" + "id" + getId() + ", nom='" + getNom() + ", adresse='" + getAdresse() + ", nbrHeures=" + getNbrHeures() + ", tauxDeVente=" + getTauxDeVente() + ", numeroDeCaisse=" + getNumeroDeCaisse() + '}';
+        return "Vendeur{" + "id" + getId() + ", nom='" + getNom() + ", adresse='" + getAdresse() + ", nbrHeures=" + getNbrHeures() + ", tauxDeVente=" + getTauxDeVente() + ", numeroDeCaisse=" + getNumeroDeCaisse() + ", salaire=" + getSalaire() + '}';
     }
 }

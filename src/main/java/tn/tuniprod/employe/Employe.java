@@ -54,8 +54,20 @@ public class Employe {
         this.nbrHeures = nbrHeures;
     }
 
+    public boolean comparer(Employe e) {
+        return this.id == e.id;
+    }
+
+    public static boolean comparer(Employe e1, Employe e2) {
+        return e1.id == e2.id;
+    }
+
+    public double getSalaire() {
+        return 0;
+    }
+
     @Override
     public String toString() {
-        return "Employe{" + "id=" + getId() + ", nom='" + getNom() + ", adresse= " + getAdresse() + ", nbrHeures=" + getNbrHeures() + '}';
+        return "Employe{" + "id=" + getId() + ", nom='" + getNom() + ", adresse= " + getAdresse() + ", nbrHeures=" + getNbrHeures() + ", salaire=" + getSalaire() + '}';
     }
 }

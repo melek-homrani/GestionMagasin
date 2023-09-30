@@ -23,12 +23,20 @@ public class Responsable extends Employe {
         return prime;
     }
 
+    @Override
+    public double getSalaire() {
+        int PRIX_HEURE = 10;
+        double PRIX_HEURE_SUPPLEMENTAIRE = PRIX_HEURE * 1.2;
+        if (getNbrHeures() <= 160) return getNbrHeures() * PRIX_HEURE;
+        return (getNbrHeures() - 160) * PRIX_HEURE + (160 - getNbrHeures()) * PRIX_HEURE_SUPPLEMENTAIRE;
+    }
+
     public void setPrime(double prime) {
         this.prime = prime;
     }
 
     @Override
     public String toString() {
-        return "Responsable{" + "id" + getId() + ", nom='" + getNom() + ", adresse='" + getAdresse() + ", nbrHeures=" + getNbrHeures() + ", prime=" + getPrime() + '}';
+        return "Responsable{" + "id" + getId() + ", nom='" + getNom() + ", adresse='" + getAdresse() + ", nbrHeures=" + getNbrHeures() + ", prime=" + getPrime() + ", salaire=" + getSalaire() + '}';
     }
 }

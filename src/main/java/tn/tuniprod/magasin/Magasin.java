@@ -1,17 +1,27 @@
 package tn.tuniprod.magasin;
 
+import tn.tuniprod.employe.Employe;
 import tn.tuniprod.produit.Produit;
 
+import java.util.Arrays;
+
 public class Magasin {
+    private final int CAPACITE_MAX = 50;
+    private final int CAPACITE_MAX_EMPLOYE = 20;
+
     private long id;
     private String libelle;
     private String adresse;
-    private final int CAPACITE_MAX = 50;
     private Produit[] produits;
-    private int nbProduits = 0;
-    private static long nbTotalProduits = 0;
+    private int nbProduits;
+    private static long nbTotalProduits;
+    private Employe[] employes;
+    private int nbEmployes;
+
 
     public Magasin() {
+        produits = new Produit[CAPACITE_MAX];
+        employes = new Employe[CAPACITE_MAX_EMPLOYE];
     }
 
     public Magasin(long id, String libelle, String adresse) {
@@ -19,6 +29,7 @@ public class Magasin {
         this.libelle = libelle;
         this.adresse = adresse;
         produits = new Produit[CAPACITE_MAX];
+        employes = new Employe[CAPACITE_MAX_EMPLOYE];
     }
 
     public long getId() {
@@ -37,8 +48,17 @@ public class Magasin {
         return this.nbProduits;
     }
 
+
     public Produit[] getProduits() {
         return this.produits;
+    }
+
+    public long getNbEmployes() {
+        return this.nbEmployes;
+    }
+
+    public Employe[] getEmployes() {
+        return this.employes;
     }
 
     public String getStringfiedProuit() {
@@ -65,6 +85,10 @@ public class Magasin {
         this.nbProduits = nbProduits;
     }
 
+    public void setNbEmployes(int nbEmployes) {
+        this.nbEmployes = nbEmployes;
+    }
+
     public boolean produitExists(Produit produit) {
         for (int i = 0; i < nbProduits; i++) {
             if (produit.comparer(produits[i])) return true;
@@ -86,9 +110,42 @@ public class Magasin {
         if (nbProduits > 0 && this.produitExists(produit)) {
             for (int i = 0; i < nbProduits; i++) {
                 if (produit.comparer(produits[i])) {
-                    produits[i] = produits[nbProduits - 1];
+                    for (int j = i; j < nbProduits - 1; j++) {
+                        produits[j] = produits[j + 1];
+                    }
                     setNbProduits(this.nbProduits - 1);
-                    Magasin.nbTotalProduits++;
+                    Magasin.nbTotalProduits--;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean employeExists(Employe employe) {
+        for (int i = 0; i < nbEmployes; i++) {
+            if (employe.comparer(employes[i])) return true;
+        }
+        return false;
+    }
+
+    public boolean addEmploye(Employe employe) {
+        if (nbEmployes < CAPACITE_MAX_EMPLOYE && !this.employeExists(employe)) {
+            employes[nbEmployes] = employe;
+            setNbEmployes(this.nbEmployes + 1);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean removeEmploye(Employe employe) {
+        if (nbEmployes > 0 && this.employeExists(employe)) {
+            for (int i = 0; i < nbEmployes; i++) {
+                if (employe.comparer(employes[i])) {
+                    for (int j = i; j < nbEmployes - 1; j++) {
+                        employes[j] = employes[j + 1];
+                    }
+                    setNbEmployes(this.nbEmployes - 1);
                     return true;
                 }
             }
@@ -104,7 +161,15 @@ public class Magasin {
         return m1.getNbProduits() > m2.getNbProduits() ? m1 : m2;
     }
 
-    public String afficher() {
-        return "magasin.Magasin{" + "id=" + getId() + ", libelle=" + getLibelle() + ", adresse=" + getAdresse() + ", nbProduits=" + getNbProduits() + ", produits=" + getStringfiedProuit() + '}';
+    @Override
+    public String toString() {
+        return "Magasin{" +
+                "id=" + id +
+                ", libelle=" + getLibelle() +
+                ", adresse=" + getAdresse() +
+                ", produits=" + Arrays.toString(getProduits()) +
+                ", nbProduits=" + getNbProduits() +
+                ", employes=" + Arrays.toString(getEmployes()) +
+                '}';
     }
 }
