@@ -88,15 +88,9 @@ public class Produit {
         return (p1.getId() == p2.getId() && p1.getLibelle().equals(p2.getLibelle()) && p1.getPrix() == p2.getPrix());
     }
 
-
-    public void afficher() {
-
-        System.out.println("L'id est " + id + ",de libelle " + libelle + ",de marque " + marque + " et de prix " + prix);
-    }
-
     @Override
     public String toString() {
-        return "L'id est " + id + ",de libelle " + libelle + ",de marque " + marque + " ,de prix " + prix + "et la date d expiration = " + dateExpiration;
+        return "Produit{" + "id=" + getId() + ", libelle=" + getLibelle() + ", marque=" + getMarque() + ", prix=" + getPrix() + ", dateExpiration=" + getDateExpiration() + '}';
     }
 
 }

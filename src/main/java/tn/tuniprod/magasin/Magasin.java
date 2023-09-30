@@ -4,6 +4,7 @@ import tn.tuniprod.produit.Produit;
 
 public class Magasin {
     private long id;
+    private String libelle;
     private String adresse;
     private final int CAPACITE_MAX = 50;
     private Produit[] produits;
@@ -13,14 +14,19 @@ public class Magasin {
     public Magasin() {
     }
 
-    public Magasin(long id, String adresse) {
+    public Magasin(long id, String libelle, String adresse) {
         this.id = id;
+        this.libelle = libelle;
         this.adresse = adresse;
         produits = new Produit[CAPACITE_MAX];
     }
 
     public long getId() {
         return this.id;
+    }
+
+    public String getLibelle() {
+        return this.libelle;
     }
 
     public String getAdresse() {
@@ -47,6 +53,10 @@ public class Magasin {
         this.id = id;
     }
 
+    public void setLibelle(String libelle) {
+        this.libelle = libelle;
+    }
+
     public void setAdresse(String adresse) {
         this.adresse = adresse;
     }
@@ -55,19 +65,9 @@ public class Magasin {
         this.nbProduits = nbProduits;
     }
 
-//    public void setProduits(Produit[] produits) {
-//        if (produits.length < CAPACITE_MAX) {
-//            for (int i = 0; i < produits.length; i++) {
-//                this.produits[i] = produits[i];
-//                Produit.incNbTotalProcuit();
-//            }
-//        }
-//    }
-
     public boolean produitExists(Produit produit) {
         for (int i = 0; i < nbProduits; i++) {
-            if (produit.comparer(produits[i]))
-                return true;
+            if (produit.comparer(produits[i])) return true;
         }
         return false;
     }
@@ -96,15 +96,15 @@ public class Magasin {
         return false;
     }
 
+    public static long getNbTotalProduits() {
+        return nbTotalProduits;
+    }
+
     public static Magasin supMagasin(Magasin m1, Magasin m2) {
         return m1.getNbProduits() > m2.getNbProduits() ? m1 : m2;
     }
 
     public String afficher() {
-        return "magasin.Magasin{" + "id=" + id +
-                ", adresse=" + adresse +
-                ", nbProduits=" + nbProduits +
-                ", produits=" + this.getStringfiedProuit() +
-                '}';
+        return "magasin.Magasin{" + "id=" + getId() + ", libelle=" + getLibelle() + ", adresse=" + getAdresse() + ", nbProduits=" + getNbProduits() + ", produits=" + getStringfiedProuit() + '}';
     }
 }
