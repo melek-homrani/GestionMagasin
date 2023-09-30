@@ -106,20 +106,22 @@ public class Magasin {
         return false;
     }
 
-    public boolean removeProduit(Produit produit) {
-        if (nbProduits > 0 && this.produitExists(produit)) {
-            for (int i = 0; i < nbProduits; i++) {
-                if (produit.comparer(produits[i])) {
-                    for (int j = i; j < nbProduits - 1; j++) {
-                        produits[j] = produits[j + 1];
-                    }
-                    setNbProduits(this.nbProduits - 1);
-                    Magasin.nbTotalProduits--;
-                    return true;
-                }
-            }
+    private int getProduitIndex(Produit produit) {
+        for (int i = 0; i < nbProduits; i++) {
+            if (produit.comparer(produits[i])) return i;
         }
-        return false;
+        return -1;
+    }
+
+    public boolean removeProduit(Produit produit) {
+        int index = getProduitIndex(produit);
+        if (index == -1 || nbProduits == 0) return false;
+        for (int i = index; i < nbProduits - 1; i++) {
+            produits[i] = produits[i + 1];
+        }
+        this.produits[nbProduits] = null;
+        setNbProduits(this.nbProduits - 1);
+        return true;
     }
 
     public boolean employeExists(Employe employe) {
@@ -138,19 +140,22 @@ public class Magasin {
         return false;
     }
 
-    public boolean removeEmploye(Employe employe) {
-        if (nbEmployes > 0 && this.employeExists(employe)) {
-            for (int i = 0; i < nbEmployes; i++) {
-                if (employe.comparer(employes[i])) {
-                    for (int j = i; j < nbEmployes - 1; j++) {
-                        employes[j] = employes[j + 1];
-                    }
-                    setNbEmployes(this.nbEmployes - 1);
-                    return true;
-                }
-            }
+    private int getEmployeIndex(Employe employe) {
+        for (int i = 0; i < nbEmployes; i++) {
+            if (employe.comparer(employes[i])) return i;
         }
-        return false;
+        return -1;
+    }
+
+    public boolean removeEmploye(Employe employe) {
+        int index = getEmployeIndex(employe);
+        if (index == -1 || nbEmployes == 0) return false;
+        for (int i = index; i < nbEmployes - 1; i++) {
+            employes[i] = employes[i + 1];
+        }
+        this.produits[nbEmployes] = null;
+        setNbEmployes(this.nbEmployes - 1);
+        return true;
     }
 
     public static long getNbTotalProduits() {
@@ -158,18 +163,12 @@ public class Magasin {
     }
 
     public static Magasin supMagasin(Magasin m1, Magasin m2) {
-        return m1.getNbProduits() > m2.getNbProduits() ? m1 : m2;
+        return m1.getNbProduits() == m2.getNbProduits() ? null : m1.getNbProduits() > m2.getNbProduits() ? m1 : m2;
     }
 
     @Override
     public String toString() {
-        return "Magasin{" +
-                "id=" + id +
-                ", libelle=" + getLibelle() +
-                ", adresse=" + getAdresse() +
-                ", produits=" + Arrays.toString(getProduits()) +
-                ", nbProduits=" + getNbProduits() +
-                ", employes=" + Arrays.toString(getEmployes()) +
-                '}';
+        return "Magasin{" + "id=" + id + ", libelle=" + getLibelle() + ", adresse=" + getAdresse() + ", produits=" + Arrays.toString(getProduits()) + ", nbProduits=" + getNbProduits() + ", employes=" + Arrays.toString(getEmployes()) + '}';
     }
+
 }

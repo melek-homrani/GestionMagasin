@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="abb6e94c-2514-46c1-bde1-bd445b960223" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tn/tuniprod/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/tuniprod/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Caissier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Caissier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Employe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Responsable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Responsable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Vendeur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Vendeur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tn/tuniprod/magasin/Magasin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/tuniprod/magasin/Magasin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +27,20 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "melekhomrani"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="3115bb7c-2209-4db3-b40d-702d760837b4" />
+        <option name="url" value="https://github.com/melekhomrani/GestionMagasin.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -74,7 +83,7 @@
       <workItem from="1695638532717" duration="2323000" />
       <workItem from="1695975605228" duration="3043000" />
       <workItem from="1695978940675" duration="1445000" />
-      <workItem from="1696062720995" duration="4715000" />
+      <workItem from="1696062720995" duration="6474000" />
     </task>
     <servers />
   </component>
