@@ -1,5 +1,9 @@
 pipeline {
     agent {
+        // ? this is for docker agent in case you don't have jenkins agent
+        // docker {
+        //     image "jenkins/agent:alpine-jdk17"
+        // }
             label 'java-maven-agent'
         }
     triggers {
