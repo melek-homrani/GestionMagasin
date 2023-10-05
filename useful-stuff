@@ -1,0 +1,5 @@
+command to get mvnw and mvnw.cmd
+- mvn wrapper:wrapper
+
+command to run the app
+- mvn clean compile exec:java
