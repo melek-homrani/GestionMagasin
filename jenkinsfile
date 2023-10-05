@@ -1,0 +1,20 @@
+pipeline {
+    agent {
+            label 'java-maven-agent'
+        }
+    triggers {
+        pollSCM '* * * * *'
+    }
+    stages {
+        stage('Build') {
+            steps {
+                echo "Building.."
+                sh '''
+                    chmod +x mvnw
+                    ./mvnw clean package
+                    java -jar target/*.jar
+                '''
+            }
+        }
+    }
+}
