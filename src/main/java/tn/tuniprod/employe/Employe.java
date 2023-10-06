@@ -68,7 +68,7 @@ public class Employe {
 
     public boolean equals(Object o) {
         if (o instanceof Employe e) {
-            return this.id == e.id && this.nom.equals(e.nom);
+            return this.getId() == e.getId() && this.getNom().equals(e.getNom());
         }
         return false;
     }
