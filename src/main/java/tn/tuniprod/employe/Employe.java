@@ -1,6 +1,6 @@
 package tn.tuniprod.employe;
 
-public class Employe {
+public abstract class Employe {
     protected int id;
     protected String nom;
     protected String adresse;
@@ -62,9 +62,7 @@ public class Employe {
         return e1.id == e2.id;
     }
 
-    public double getSalaire() {
-        return 0;
-    }
+    public abstract double getSalaire();
 
     public boolean equals(Object o) {
         if (o instanceof Employe e) {
