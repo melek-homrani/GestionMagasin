@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abb6e94c-2514-46c1-bde1-bd445b960223" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="abb6e94c-2514-46c1-bde1-bd445b960223" name="Changes" comment="prosit 5: update Employe and Magasin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tn/tuniprod/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/tuniprod/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Caissier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Caissier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Employe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Responsable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Responsable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tn/tuniprod/magasin/Magasin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/tuniprod/magasin/Magasin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,8 +96,17 @@
       <workItem from="1695975605228" duration="3043000" />
       <workItem from="1695978940675" duration="1445000" />
       <workItem from="1696062720995" duration="7603000" />
-      <workItem from="1696580525829" duration="1806000" />
+      <workItem from="1696580525829" duration="2992000" />
     </task>
+    <task id="LOCAL-00001" summary="prosit 5: update Employe and Magasin">
+      <option name="closed" value="true" />
+      <created>1696582517045</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1696582517045</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,5 +115,9 @@
   <component name="UnknownFeatures">
     <option featureType="dependencySupport" implementationName="executable:docker" />
     <option featureType="dependencySupport" implementationName="executable:kubectl" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="prosit 5: update Employe and Magasin" />
+    <option name="LAST_COMMIT_MESSAGE" value="prosit 5: update Employe and Magasin" />
   </component>
 </project>
