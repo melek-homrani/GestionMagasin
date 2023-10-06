@@ -61,7 +61,6 @@ public class Main {
                 carrefour.addProduit(p4);
             } catch (MagasinPleinException e) {
                 System.out.println(e.getMessage());
-                return;
             }
         }
 
