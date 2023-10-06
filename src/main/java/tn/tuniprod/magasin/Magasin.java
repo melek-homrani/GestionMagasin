@@ -4,6 +4,7 @@ import tn.tuniprod.employe.Caissier;
 import tn.tuniprod.employe.Employe;
 import tn.tuniprod.employe.Responsable;
 import tn.tuniprod.employe.Vendeur;
+import tn.tuniprod.exceptions.MagasinPleinException;
 import tn.tuniprod.produit.Produit;
 
 import java.util.Arrays;
@@ -99,8 +100,15 @@ public class Magasin {
         return false;
     }
 
-    public boolean addProduit(Produit produit) {
-        if (nbProduits < CAPACITE_MAX && !this.produitExists(produit)) {
+    private boolean magasinPlein() {
+        return nbProduits == CAPACITE_MAX;
+    }
+
+    public boolean addProduit(Produit produit) throws MagasinPleinException {
+        if (magasinPlein()) {
+            throw new MagasinPleinException("Le magasin est plein");
+        }
+        if (!this.produitExists(produit)) {
             produits[nbProduits] = produit;
             setNbProduits(this.nbProduits + 1);
             Magasin.nbTotalProduits++;
@@ -165,33 +173,33 @@ public class Magasin {
         return nbTotalProduits;
     }
 
-    public void afficheSalaire(){
+    public void afficheSalaire() {
         double salaire = 0;
         System.out.print("Le salaire de des employe est : ");
-        for(var employe : employes){
-            if(employe != null) salaire += employe.getSalaire();
+        for (var employe : employes) {
+            if (employe != null) salaire += employe.getSalaire();
         }
         System.out.println(salaire);
     }
 
-    public void affichePrimeResponsable (){
+    public void affichePrimeResponsable() {
         double prime = 0;
         System.out.print("La prime des responsables est : ");
-        for(var employe : employes){
-            if(employe instanceof Responsable) prime += ((Responsable) employe).getPrime();
+        for (var employe : employes) {
+            if (employe instanceof Responsable) prime += ((Responsable) employe).getPrime();
         }
         System.out.println(prime);
     }
 
-    public void afficheTypeEmploye(){
+    public void afficheTypeEmploye() {
         int nbCaissier = 0;
         int nbVendeur = 0;
         int nbResponsable = 0;
 
-        for(var employe : employes){
-            if(employe instanceof Responsable) nbResponsable++;
-            else if(employe instanceof Vendeur) nbVendeur++;
-            else if(employe instanceof Caissier) nbCaissier++;
+        for (var employe : employes) {
+            if (employe instanceof Responsable) nbResponsable++;
+            else if (employe instanceof Vendeur) nbVendeur++;
+            else if (employe instanceof Caissier) nbCaissier++;
         }
         System.out.println("Le nombre de caissier est : " + nbCaissier);
         System.out.println("Le nombre de vendeur est : " + nbVendeur);

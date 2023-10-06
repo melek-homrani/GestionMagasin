@@ -3,6 +3,7 @@ package tn.tuniprod;
 import tn.tuniprod.employe.Caissier;
 import tn.tuniprod.employe.Responsable;
 import tn.tuniprod.employe.Vendeur;
+import tn.tuniprod.exceptions.MagasinPleinException;
 import tn.tuniprod.magasin.Magasin;
 import tn.tuniprod.produit.Produit;
 
@@ -39,11 +40,11 @@ public class Main {
             monoPrix.addEmploye(r1);
         }
 
-        for (int i =0; i< carrefour.getNbEmployes(); i++) {
+        for (int i = 0; i < carrefour.getNbEmployes(); i++) {
             System.out.println(carrefour.getEmployes()[i]);
         }
 
-        for (int i =0; i< monoPrix.getNbEmployes(); i++) {
+        for (int i = 0; i < monoPrix.getNbEmployes(); i++) {
             System.out.println(monoPrix.getEmployes()[i]);
         }
 
@@ -53,29 +54,38 @@ public class Main {
         Produit p4 = new Produit(4, "Snack", "Kif", 1.5, LocalDate.of(2021, 12, 31));
 
         for (int i = 0; i < 3; i++) {
-            carrefour.addProduit(p1);
-            carrefour.addProduit(p2);
-            carrefour.addProduit(p3);
-            carrefour.addProduit(p4);
+            try {
+                carrefour.addProduit(p1);
+                carrefour.addProduit(p2);
+                carrefour.addProduit(p3);
+                carrefour.addProduit(p4);
+            } catch (MagasinPleinException e) {
+                System.out.println(e.getMessage());
+                return;
+            }
         }
 
-        p1 = new Produit(5, "Cafe", "Nescafe", 2.5, LocalDate.of(2021, 12, 31));
+        p1 = new Produit(5, "Cafe", "Nescafe", -2.5, LocalDate.of(2021, 12, 31));
         p2 = new Produit(6, "Eau", "Ain Zaghouan", 0.5, LocalDate.of(2021, 12, 31));
         p3 = new Produit(7, "Eau", "Sabrine", 1.5, LocalDate.of(2021, 12, 31));
         p4 = new Produit(8, "Snack", "Kif", 1.5, LocalDate.of(2021, 12, 31));
 
         for (int i = 0; i < 3; i++) {
-            monoPrix.addProduit(p1);
-            monoPrix.addProduit(p2);
-            monoPrix.addProduit(p3);
-            monoPrix.addProduit(p4);
+            try {
+                monoPrix.addProduit(p1);
+                monoPrix.addProduit(p2);
+                monoPrix.addProduit(p3);
+                monoPrix.addProduit(p4);
+            } catch (MagasinPleinException e) {
+                throw new RuntimeException(e);
+            }
         }
 
-        for (int i =0; i< carrefour.getNbProduits(); i++) {
+        for (int i = 0; i < carrefour.getNbProduits(); i++) {
             System.out.println(carrefour.getProduits()[i]);
         }
 
-        for (int i =0; i< monoPrix.getNbProduits(); i++) {
+        for (int i = 0; i < monoPrix.getNbProduits(); i++) {
             System.out.println(monoPrix.getProduits()[i]);
         }
 

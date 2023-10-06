@@ -1,6 +1,8 @@
 package tn.tuniprod.produit;
 
 
+import tn.tuniprod.exceptions.PrixNegatifException;
+
 import java.time.LocalDate;
 
 
@@ -26,14 +28,22 @@ public class Produit {
         this.id = id;
         this.libelle = libelle;
         this.marque = marque;
-        setPrix(prix);
+        try {
+            setPrix(prix);
+        } catch (PrixNegatifException e) {
+            throw new RuntimeException(e.getMessage());
+        }
     }
 
-    public Produit(int id, String libelle, String marque, double prix, LocalDate dateExpiration) {
+    public Produit(int id, String libelle, String marque, double prix, LocalDate dateExpiration)  {
         this.id = id;
         this.libelle = libelle;
         this.marque = marque;
-        setPrix(prix);
+        try {
+            setPrix(prix);
+        } catch (PrixNegatifException e) {
+            throw new RuntimeException(e.getMessage());
+        }
         this.dateExpiration = dateExpiration;
     }
 
@@ -67,9 +77,11 @@ public class Produit {
         return prix;
     }
 
-    public void setPrix(double prix) {
-        if (prix > 0) this.prix = prix;
-        else System.out.println("Le prix ne peut pas être négatif.");
+    public void setPrix(double prix) throws PrixNegatifException {
+        if (prix < 0) {
+            throw new PrixNegatifException(prix);
+        }
+        this.prix = prix;
     }
 
     public LocalDate getDateExpiration() {
