@@ -37,6 +37,6 @@ public class Responsable extends Employe {
 
     @Override
     public String toString() {
-        return "Responsable{" + "id" + getId() + ", nom='" + getNom() + ", adresse='" + getAdresse() + ", nbrHeures=" + getNbrHeures() + ", prime=" + getPrime() + ", salaire=" + getSalaire() + '}';
+        return "Responsable{" + super.toString() + ", prime=" + this.prime + '}';
     }
 }

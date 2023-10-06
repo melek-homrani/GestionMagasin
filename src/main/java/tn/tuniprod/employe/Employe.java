@@ -75,6 +75,6 @@ public class Employe {
 
     @Override
     public String toString() {
-        return "Employe{" + "id=" + getId() + ", nom='" + getNom() + ", adresse= " + getAdresse() + ", nbrHeures=" + getNbrHeures() + ", salaire=" + getSalaire() + '}';
+        return "id=" + getId() + ", nom='" + getNom() + ", adresse= " + getAdresse() + ", nbrHeures=" + getNbrHeures() + ", salaire=" + getSalaire();
     }
 }

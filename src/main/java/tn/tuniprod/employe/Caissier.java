@@ -23,7 +23,7 @@ public class Caissier extends Employe {
 
     @Override
     public String toString() {
-        return "Caissier{" + "id" + getId() + ", nom='" + getNom() + ", adresse='" + getAdresse() + ", nbrHeures=" + getNbrHeures() + ", salaire=" + getSalaire() + '}';
+        return "Caissier{" + super.toString() + "}";
     }
 
 }

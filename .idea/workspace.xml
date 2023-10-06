@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abb6e94c-2514-46c1-bde1-bd445b960223" name="Changes" comment="prosit 5: update Employe and Magasin">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Caissier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Caissier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Employe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Employe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Responsable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Responsable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Vendeur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/tuniprod/employe/Vendeur.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +99,7 @@
       <workItem from="1695975605228" duration="3043000" />
       <workItem from="1695978940675" duration="1445000" />
       <workItem from="1696062720995" duration="7603000" />
-      <workItem from="1696580525829" duration="3306000" />
+      <workItem from="1696580525829" duration="3941000" />
     </task>
     <task id="LOCAL-00001" summary="prosit 5: update Employe and Magasin">
       <option name="closed" value="true" />

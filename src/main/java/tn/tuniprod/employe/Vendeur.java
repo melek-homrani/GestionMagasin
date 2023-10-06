@@ -50,6 +50,6 @@ public class Vendeur extends Employe {
 
     @Override
     public String toString() {
-        return "Vendeur{" + "id" + getId() + ", nom='" + getNom() + ", adresse='" + getAdresse() + ", nbrHeures=" + getNbrHeures() + ", tauxDeVente=" + getTauxDeVente() + ", numeroDeCaisse=" + getNumeroDeCaisse() + ", salaire=" + getSalaire() + '}';
+        return "Vendeur{" + super.toString() + ", tauxDeVente=" + this.tauxDeVente + ", numeroDeCaisse=" + this.numeroDeCaisse + '}';
     }
 }
