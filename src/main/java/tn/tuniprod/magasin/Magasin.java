@@ -1,6 +1,9 @@
 package tn.tuniprod.magasin;
 
+import tn.tuniprod.employe.Caissier;
 import tn.tuniprod.employe.Employe;
+import tn.tuniprod.employe.Responsable;
+import tn.tuniprod.employe.Vendeur;
 import tn.tuniprod.produit.Produit;
 
 import java.util.Arrays;
@@ -160,6 +163,39 @@ public class Magasin {
 
     public static long getNbTotalProduits() {
         return nbTotalProduits;
+    }
+
+    public void afficheSalaire(){
+        double salaire = 0;
+        System.out.print("Le salaire de des employe est : ");
+        for(var employe : employes){
+            if(employe != null) salaire += employe.getSalaire();
+        }
+        System.out.println(salaire);
+    }
+
+    public void affichePrimeResponsable (){
+        double prime = 0;
+        System.out.print("La prime des responsables est : ");
+        for(var employe : employes){
+            if(employe instanceof Responsable) prime += ((Responsable) employe).getPrime();
+        }
+        System.out.println(prime);
+    }
+
+    public void afficheTypeEmploye(){
+        int nbCaissier = 0;
+        int nbVendeur = 0;
+        int nbResponsable = 0;
+
+        for(var employe : employes){
+            if(employe instanceof Responsable) nbResponsable++;
+            else if(employe instanceof Vendeur) nbVendeur++;
+            else if(employe instanceof Caissier) nbCaissier++;
+        }
+        System.out.println("Le nombre de caissier est : " + nbCaissier);
+        System.out.println("Le nombre de vendeur est : " + nbVendeur);
+        System.out.println("Le nombre de responsable est : " + nbResponsable);
     }
 
     public static Magasin supMagasin(Magasin m1, Magasin m2) {

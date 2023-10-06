@@ -28,7 +28,7 @@ public class Responsable extends Employe {
         int PRIX_HEURE = 10;
         double PRIX_HEURE_SUPPLEMENTAIRE = PRIX_HEURE * 1.2;
         if (getNbrHeures() <= 160) return getNbrHeures() * PRIX_HEURE;
-        return (getNbrHeures() - 160) * PRIX_HEURE + (160 - getNbrHeures()) * PRIX_HEURE_SUPPLEMENTAIRE;
+        return (getNbrHeures() - 160) * PRIX_HEURE_SUPPLEMENTAIRE + 160 * PRIX_HEURE_SUPPLEMENTAIRE;
     }
 
     public void setPrime(double prime) {

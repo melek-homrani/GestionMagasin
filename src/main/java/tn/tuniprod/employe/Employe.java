@@ -66,6 +66,10 @@ public class Employe {
         return 0;
     }
 
+    public boolean equals(Employe e) {
+        return this.id == e.id && this.nom.equals(e.nom);
+    }
+
     @Override
     public String toString() {
         return "Employe{" + "id=" + getId() + ", nom='" + getNom() + ", adresse= " + getAdresse() + ", nbrHeures=" + getNbrHeures() + ", salaire=" + getSalaire() + '}';

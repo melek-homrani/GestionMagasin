@@ -13,10 +13,10 @@ public class Main {
         Magasin carrefour = new Magasin(1, "Carrefour", "Centre Ville");
         Magasin monoPrix = new Magasin(2, "Mono Prix", "Manzah 6");
 
-        Caissier c1 = new Caissier(1, "Ali", "Tunis");
-        Caissier c2 = new Caissier(2, "Mohamed", "Ariana");
-        Vendeur v1 = new Vendeur(3, "Ahmed", "Tunis");
-        Responsable r1 = new Responsable(4, "Hassen", "Tunis");
+        Caissier c1 = new Caissier(1, "Ali", "Tunis", 200);
+        Caissier c2 = new Caissier(2, "Mohamed", "Ariana", 200);
+        Vendeur v1 = new Vendeur(3, "Ahmed", "Tunis", 200, 1.5, 1);
+        Responsable r1 = new Responsable(4, "Hassen", "Tunis", 200, 1.5);
 
         for (int i = 0; i < 4; i++) {
             carrefour.addEmploye(c1);
@@ -25,11 +25,11 @@ public class Main {
             carrefour.addEmploye(r1);
         }
 
-        c1 = new Caissier(5, "Melek", "Tunis");
-        v1 = new Vendeur(6, "Sarra", "Tunis");
-        Vendeur v2 = new Vendeur(7, "Sarra", "Tunis");
-        Vendeur v3 = new Vendeur(8, "Sarra", "Tunis");
-        r1 = new Responsable(9, "Sarra", "Tunis");
+        c1 = new Caissier(5, "Melek", "Tunis", 200);
+        v1 = new Vendeur(6, "Sarra", "Tunis", 200, 1.5, 1);
+        Vendeur v2 = new Vendeur(7, "Sarra", "Tunis", 200, 1.5, 2);
+        Vendeur v3 = new Vendeur(8, "Sarra", "Tunis", 200, 1.5, 3);
+        r1 = new Responsable(9, "Sarra", "Tunis", 200, 1.5);
 
         for (int i = 0; i < 5; i++) {
             monoPrix.addEmploye(c1);
@@ -78,5 +78,9 @@ public class Main {
         for (int i =0; i< monoPrix.getNbProduits(); i++) {
             System.out.println(monoPrix.getProduits()[i]);
         }
+
+        monoPrix.afficheSalaire();
+
+        monoPrix.affichePrimeResponsable();
     }
 }
